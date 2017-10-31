@@ -13,10 +13,25 @@ class CreateCustomersTable extends Migration
      */
     public function up()
     {
-        Schema::create('customers', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-        });
+        DB::statement("
+            CREATE TABLE customers
+            (
+                Customer_ID int PRIMARY KEY,
+                first_name varchar(15) NOT NULL,
+                middle_name varchar(15),
+                last_name varchar(15) NOT NULL,
+                Father_name varchar(25) NOT NULL,
+                Street varchar(25),
+                City varchar(15),
+                State varchar(15),
+                PIN_Code int NOT NULL,
+                Gender enum('M', 'F', 'O') NOT NULL,
+                Date_of_birth date NOT NULL,
+                Email varchar(25),
+                Aadhar_number int NOT NULL,
+                Account_Number int NOT NULL
+            )
+            ");        
     }
 
     /**
