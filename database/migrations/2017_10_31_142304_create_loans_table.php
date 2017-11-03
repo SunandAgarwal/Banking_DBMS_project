@@ -21,7 +21,7 @@ class CreateLoansTable extends Migration
                 Interest_Rate real NOT NULL,
                 Period text NOT NULL
             )
-            ");    
+            ");
     }
 
     /**
