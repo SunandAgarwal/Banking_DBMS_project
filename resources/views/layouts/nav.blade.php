@@ -1,3 +1,6 @@
+<!-- Custom css for navbar -->
+<link href="/css/nav.css" rel="stylesheet">	
+
 <header>
 	<div class="blog-masthead">
 	  <div class="container">

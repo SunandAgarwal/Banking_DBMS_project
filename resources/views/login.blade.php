@@ -1,32 +1,19 @@
-<!DOCTYPE html>
-<html >
-<head>
-  <meta charset="UTF-8">
-  <title>Login</title>
-  <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- 
-  <link rel="stylesheet" href="/css/login.css">
-
+@extends('session.master')
   
-</head>
 
-<body>
-  <div class='wrap'>
+@section('title')
   Login
-    <form>
-        <input type='text' id='username' placeholder='Username'>
-        <input type='password' id='password' placeholder='Password'>
-    </form>
-  <button class='btn btn-primary btn-block login'>LOG IN</button>
-</div>
+@endsection
 
-
-</body>
-</html>
+@section('content')
+  <form>
+      
+        <h1>Login</h1>
+        
+            <input type="email" id="mail" name="user_email" placeholder="Email">
+            
+            <input type="password" id="password" name="user_password" placeholder="Password">
+          
+        <button class="btn btn-success btn-block">Let Me In</button>
+  </form>
+@endsection
