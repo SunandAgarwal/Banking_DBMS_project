@@ -16,7 +16,7 @@ class CreateCustomersTable extends Migration
         DB::statement("
             CREATE TABLE customers
             (
-                Customer_ID int PRIMARY KEY,
+                Customer_ID int PRIMARY KEY AUTO_INCREMENT,
                 first_name varchar(15) NOT NULL,
                 middle_name varchar(15),
                 last_name varchar(15) NOT NULL,
@@ -29,9 +29,9 @@ class CreateCustomersTable extends Migration
                 Date_of_birth date NOT NULL,
                 Email varchar(25),
                 Aadhar_number int NOT NULL,
-                Account_Number int NOT NULL
+                Account_Number bigint NOT NULL UNIQUE
             )
-            ");        
+        ");
     }
 
     /**

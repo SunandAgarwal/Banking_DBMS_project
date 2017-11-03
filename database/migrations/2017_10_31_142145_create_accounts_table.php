@@ -14,16 +14,15 @@ class CreateAccountsTable extends Migration
     public function up()
     {
         DB::statement("
-            CREATE TABLE accounts
-            (
-                Account_Number int PRIMARY KEY,
+            CREATE TABLE accounts (
+                Account_Number bigint PRIMARY KEY,
                 Type text NOT NULL,
                 Balance real NOT NULL,
                 Status text NOT NULL,
                 Cheque_Book_No int,
                 Registered_time datetime
             )
-            ");        
+        ");        
     }
 
     /**

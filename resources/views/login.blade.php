@@ -7,7 +7,7 @@
 
 @section('content')
   <form>
-      
+      {{ csrf_field() }}
         <h1>Login</h1>
         
             <input type="email" id="mail" name="user_email" placeholder="Email">

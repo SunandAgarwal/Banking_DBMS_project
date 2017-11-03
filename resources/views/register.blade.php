@@ -6,8 +6,8 @@
 @endsection
 
 @section('content')
-  <form>
-      
+  <form method="POST" action="/register">
+      {{ csrf_field() }}
         <h1>Register</h1>
         
           <legend><span class="number">1</span>Your basic info</legend>
@@ -21,9 +21,9 @@
           <input type="number" id="age" name="age" placeholder="Age">
           
           <label for="gender">Gender:</label>
-          <input type="radio" name="gender" value="male">Male &nbsp;&nbsp;&nbsp;
-          <input type="radio" name="gender" value="male">Female &nbsp;&nbsp;&nbsp;
-          <input type="radio" name="gender" value="male">Other
+          <input type="radio" name="gender" value="M">Male &nbsp;&nbsp;&nbsp;
+          <input type="radio" name="gender" value="F">Female &nbsp;&nbsp;&nbsp;
+          <input type="radio" name="gender" value="O">Other
 
           <br>
           <br>
@@ -43,6 +43,12 @@
           <input type="text" id="state" name="state" placeholder="State">
           <input type="number" id="pin" name="pin" placeholder="PIN Code">
           
+          <label for="user">I am a : </label>
+          <input type="radio" name="user" id="user" value="customer">Customer &nbsp; &nbsp; &nbsp;
+          <input type="radio" name="user" id="user" value="employee">Employee &nbsp; &nbsp; &nbsp;
+
+          <br>
+          <br>
         
         <button type="submit">Create My Account</button>
   </form>

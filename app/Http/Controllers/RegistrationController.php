@@ -3,8 +3,32 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Customer;
+use App\Employee;
 
 class RegistrationController extends Controller
 {
-    //
+    // create a new user
+
+    public function create() {
+    	return view('register');
+    }
+
+    // store the information of the user
+    public function store() {
+    	$user = request('user');
+    	if($user == 'customer') {
+    		$user = new Customer;
+    		// the insert query is in the Customer.php model, which is called by the
+    		// insert method
+    		$user -> insert_data_customer(request() -> all());
+    	}
+    	else {
+    		$user = new Employee;
+    		$user -> insert_data_employee(request() -> all());
+    	}
+
+    	return view('index');
+    }
 }

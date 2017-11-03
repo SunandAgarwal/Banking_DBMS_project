@@ -15,7 +15,7 @@ class CreateEmployeesTable extends Migration
     {
         DB::statement("
             CREATE TABLE employees (
-                Employee_ID int PRIMARY KEY,
+                Employee_ID int PRIMARY KEY AUTO_INCREMENT,
                 first_name varchar(15) NOT NULL,
                 middle_name varchar(15),
                 last_name varchar(15) NOT NULL,

@@ -16,7 +16,7 @@ class EmpAccTable extends Migration
         // create table
         DB::statement("
             CREATE TABLE emp__acc (
-                Account_Number int PRIMARY KEY,
+                Account_Number bigint PRIMARY KEY,
                 Employee_ID int,
                 Foreign Key(Account_Number) References accounts (Account_Number),
                 Foreign Key(Employee_ID) References employees (Employee_ID)

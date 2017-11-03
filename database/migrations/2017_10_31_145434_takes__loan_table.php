@@ -16,7 +16,7 @@ class TakesLoanTable extends Migration
         // create table
         DB::statement("
             CREATE TABLE takes__loan(
-                Account_Number int,
+                Account_Number bigint,
                 Loan_No int,
                 Loan_Amount real NOT NULL,
                 Monthly_Installment real NOT NULL,
