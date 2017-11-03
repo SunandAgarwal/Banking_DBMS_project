@@ -14,24 +14,14 @@
 </head>
 <body>
 	<!-- navbar -->
-	<header>
-		<div class="blog-masthead">
-		  <div class="container">
-		    <nav class="nav">
-		      <a class="nav-link active" href="#">Home</a>
-		      <a class="nav-link" href="#">@yield('name')</a>
-		      <a class="nav-link ml-auto" href="#">Logout</a>
-		    </nav>
-		  </div>
-		</div>
-	</header>
+	@include ('layouts.nav')
 	
 	<div class="container">
 		@yield('content')
 	</div>
 
 	<div class="footer">
-		
+		@yield ('footer')
 	</div>
 </body>
 </html>
