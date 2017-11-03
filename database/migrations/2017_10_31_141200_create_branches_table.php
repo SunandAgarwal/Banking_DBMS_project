@@ -23,7 +23,7 @@ class CreateBranchesTable extends Migration
                 State varchar(15) NOT NULL,
                 PIN_Code int NOT NULL
             )
-            ");
+        ");
     }
 
     /**

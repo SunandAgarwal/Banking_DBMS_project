@@ -17,7 +17,8 @@ class CreateEmpPhonesTable extends Migration
             CREATE TABLE emp__phones (
                 Employee_ID int,
                 Phone_No int,
-                PRIMARY KEY(Employee_ID, Phone_No)
+                PRIMARY KEY(Employee_ID, Phone_No),
+                Foreign Key(Employee_ID) References employees (Employee_ID)
             )
         ");
     }

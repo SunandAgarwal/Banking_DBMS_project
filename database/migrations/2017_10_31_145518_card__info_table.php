@@ -22,7 +22,8 @@ class CardInfoTable extends Migration
                 Card_Holder text,
                 Type text NOT NULL,
                 PIN int NOT NULL,
-                Account_Number int NOT NULL
+                Account_Number int NOT NULL,
+                Foreign Key(Account_Number) References accounts (Account_Number)
             )
         ");
     }

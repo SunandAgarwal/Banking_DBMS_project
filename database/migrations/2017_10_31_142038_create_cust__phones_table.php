@@ -18,9 +18,10 @@ class CreateCustPhonesTable extends Migration
             (
                 Customer_ID int,
                 Phone_No int,
-                Primary Key(Customer_ID, Phone_No)
+                Primary Key(Customer_ID, Phone_No),
+                Foreign Key (Customer_ID) References customers(Customer_ID)
             )
-            ");        
+        ");
     }
 
     /**

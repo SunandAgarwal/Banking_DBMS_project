@@ -28,7 +28,8 @@ class CreateEmployeesTable extends Migration
                 Aadhar_number int NOT NULL,
                 Designation text NOT NULL,
                 Salary int NOT NULL,
-                IFSC_Code varchar(15) NOT NULL
+                IFSC_Code varchar(15) NOT NULL,
+                Foreign Key (IFSC_Code) References branches(IFSC_Code)
             )
         ");
     }

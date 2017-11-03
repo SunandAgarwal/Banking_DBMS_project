@@ -22,7 +22,9 @@ class TakesLoanTable extends Migration
                 Monthly_Installment real NOT NULL,
                 Pending_Amount int NOT NULL,
                 Collateral_Guarantor text NOT NULL,
-                PRIMARY KEY(Account_Number, Loan_No)
+                PRIMARY KEY(Account_Number, Loan_No),
+                Foreign Key(Account_Number) References accounts (Account_Number),
+                Foreign Key(Loan_No) References loans (Loan_No)
             )
         ");
     }

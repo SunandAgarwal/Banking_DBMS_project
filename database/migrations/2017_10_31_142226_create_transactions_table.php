@@ -24,9 +24,10 @@ class CreateTransactionsTable extends Migration
                 Type text NOT NULL,
                 Account_Number int NOT NULL,
                 Sender_Acc_No int,
-                Beneficiary_Acc_No int
+                Beneficiary_Acc_No int,
+                Foreign Key(Account_Number) References accounts (Account_Number)
             )
-            ");        
+        ");        
     }
 
     /**
