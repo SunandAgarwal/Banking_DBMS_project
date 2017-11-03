@@ -12,3 +12,8 @@
 */
 
 Route::get('/', 'CustomerController@index');
+
+Route::get('login', function()
+	{
+		return view('login');
+	});
