@@ -49,6 +49,13 @@
 
           <br>
           <br>
+          Designation:
+          <select id="designation" name="designation">
+            <option value="ma">Manager</option>
+            <option value="po">Probationary Officer</option>
+            <option value="so">Specialist Officer</option>
+            <option value="oa">Office Assistant</option>
+          </select>
 
           <legend><span class="number">4</span>Your Account Info : </legend>
           <input type="text" id="type" name="type" placeholder="(Savings/Current/Joint)">

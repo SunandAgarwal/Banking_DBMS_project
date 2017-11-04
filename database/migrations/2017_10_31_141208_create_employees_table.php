@@ -21,6 +21,7 @@ class CreateEmployeesTable extends Migration
                 last_name varchar(15) NOT NULL,
                 Street text,
                 City text,
+                State text,
                 Pin_Code int NOT NULL,
                 Gender enum('M','F','O') NOT NULL,
                 Date_Of_birth date NOT NULL,
