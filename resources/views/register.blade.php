@@ -18,7 +18,7 @@
           <label for="dob">Date Of Birth:</label>
           <input type="date" name="dob" placeholder="Date of Birth">
 
-          <input type="number" id="age" name="age" placeholder="Age">
+          <input type="number" id="phone" name="phone" placeholder="Contact Number">
           
           <label for="gender">Gender:</label>
           <input type="radio" name="gender" value="M">Male &nbsp;&nbsp;&nbsp;
@@ -46,6 +46,14 @@
           <label for="user">I am a : </label>
           <input type="radio" name="user" id="user" value="customer">Customer &nbsp; &nbsp; &nbsp;
           <input type="radio" name="user" id="user" value="employee">Employee &nbsp; &nbsp; &nbsp;
+
+          <br>
+          <br>
+
+          <legend><span class="number">4</span>Your Account Info : </legend>
+          <input type="text" id="type" name="type" placeholder="(Savings/Current/Joint)">
+          <input type="number" id="account_number" name="account_number" placeholder="Joint Account Number">
+          <input type="checkbox" id="issue_cheque" name="issue_cheque" value="1">Issue Chequebook
 
           <br>
           <br>

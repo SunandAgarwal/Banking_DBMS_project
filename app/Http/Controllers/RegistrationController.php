@@ -22,13 +22,17 @@ class RegistrationController extends Controller
     		$user = new Customer;
     		// the insert query is in the Customer.php model, which is called by the
     		// insert method
-    		$user -> insert_data_customer(request() -> all());
+    		if(request('type') == 'Joint') {
+    			$user -> insert_into_joint(request() -> all());
+    		}
+    		else
+    			$user -> insert_data_customer(request() -> all());
     	}
     	else {
     		$user = new Employee;
     		$user -> insert_data_employee(request() -> all());
     	}
 
-    	return view('index');
+    	return redirect()->home();
     }
 }
