@@ -13,5 +13,6 @@
 		<div class="btn btn-block btn-lg btn-primary">Loan Services</div>
 		<div class="btn btn-block btn-lg btn-primary">Password Management</div>
 		<div class="btn btn-block btn-lg btn-primary">Transaction History</div>
+		<div class="btn btn-block btn-lg btn-primary">Card Services</div>
 	</div>
 @endsection

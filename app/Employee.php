@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Emp_Phone;
 use App\Customer;
 use App\Account;
+use App\Emp_Acc;
 
 class Employee extends Model
 {
@@ -53,5 +54,8 @@ class Employee extends Model
 			SELECT Employee_id FROM employees WHERE Aadhar_Number = ?
     	", array($user['aadhar_no']));
         Emp_Phone::insert_phone($employee_id[0]->Employee_id, $user['phone']);
+
+        // insert into emp_acc
+        Emp_Acc::insert_into($account_number, $employee_id[0]->Employee_id);
     }
 }
