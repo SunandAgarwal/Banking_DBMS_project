@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use App\Customer as gen_acc;
+use App\Account;
 
 class Employee extends Model
 {
@@ -39,5 +41,9 @@ class Employee extends Model
 			INSERT INTO employees (first_name, middle_name, last_name, Street, City, State, Pin_Code, Gender, Date_Of_birth, Email, Aadhar_number, Designation, Salary, IFSC_Code) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
     	'), array($name[0], $middle_name, $name[count($name) - 1], $user['street'], $user['city'], $user['state'], $user['pin'], $user['gender'], $user['dob'], $user['email'], $user['aadhar_no'], $user['designation'], $salary, $ifsc_code));
         // end inserting into the employees table
+
+        $account_number = gen_acc::generate_account();
+        $account = new Account;
+        $account -> insert_into_account($account_number, $user);
     }
 }

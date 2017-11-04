@@ -26,7 +26,7 @@ class CreateEmployeesTable extends Migration
                 Gender enum('M','F','O') NOT NULL,
                 Date_Of_birth date NOT NULL,
                 Email text,
-                Aadhar_number int NOT NULL,
+                Aadhar_number int NOT NULL UNIQUE,
                 Designation text NOT NULL,
                 Salary int NOT NULL,
                 IFSC_Code varchar(15) NOT NULL,
