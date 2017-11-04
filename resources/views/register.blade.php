@@ -60,8 +60,10 @@
           </select>
 
           <legend><span class="number">4</span>Your Account Info : </legend>
-          <input type="text" id="type" name="type" placeholder="(Savings/Current/Joint)">
+          <input type="text" id="type" name="type" placeholder="(Savings/Current/Joint/Employee Account)">
           <input type="number" id="account_number" name="account_number" placeholder="Joint Account Number">
+
+          <input type="hidden" id="issue_cheque" name="issue_cheque" value="0" />
           <input type="checkbox" id="issue_cheque" name="issue_cheque" value="1">Issue Chequebook
 
           <br>
