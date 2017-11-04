@@ -28,16 +28,16 @@ class Employee extends Model
 
     	$salary = Employee::generate_salary($user['designation']);
 
-    	$ifsc = DB::statement("
+    	$ifsc = DB::select("
 			SELECT IFSC_Code FROM branches
 			ORDER BY RAND() LIMIT 1
     		");
-    	$ifsc = $ifsc[0]->IFSC_Code;
+    	$ifsc_code = $ifsc[0]->IFSC_Code;
 
     	// insert query, prepare and bind using inbuilt function
     	DB::insert(DB::raw('
 			INSERT INTO employees (first_name, middle_name, last_name, Street, City, State, Pin_Code, Gender, Date_Of_birth, Email, Aadhar_number, Designation, Salary, IFSC_Code) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
-    	'), array($name[0], $middle_name, $name[count($name) - 1], $user['street'], $user['city'], $user['state'], $user['pin'], $user['gender'], $user['dob'], $user['email'], $user['aadhar_no'], $user['designation'], $salary, $ifsc));
+    	'), array($name[0], $middle_name, $name[count($name) - 1], $user['street'], $user['city'], $user['state'], $user['pin'], $user['gender'], $user['dob'], $user['email'], $user['aadhar_no'], $user['designation'], $salary, $ifsc_code));
         // end inserting into the employees table
     }
 }
