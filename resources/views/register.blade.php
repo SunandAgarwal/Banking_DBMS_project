@@ -18,8 +18,10 @@
           <label for="dob">Date Of Birth:</label>
           <input type="date" name="dob" placeholder="Date of Birth">
 
-          <input type="number" id="phone" name="phone" placeholder="Contact Number">
-          
+          <input type="number" id="phone1" name="phone[]" placeholder="Contact Number 1">
+          <input type="number" id="phone2" name="phone[]" placeholder="Contact Number 2">
+          <input type="number" id="phone3" name="phone[]" placeholder="Contact Number 3">
+
           <label for="gender">Gender:</label>
           <input type="radio" name="gender" value="M">Male &nbsp;&nbsp;&nbsp;
           <input type="radio" name="gender" value="F">Female &nbsp;&nbsp;&nbsp;

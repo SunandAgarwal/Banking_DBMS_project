@@ -9,12 +9,12 @@ use App\Account;
 class Customer extends Model
 {
 
-    static function generate_account() {
+    public static function generate_account() {
         // generating the account number, and check that if it is not assigned to someone
         $account_number = rand(1000000000,9999999999);
         // avoid duplicate entries of account number
         while(true) {
-            $check_acc = DB::select("SELECT Account_Number FROM customers WHERE Account_Number = ?" , array($account_number));
+            $check_acc = DB::select("SELECT Account_Number FROM accounts WHERE Account_Number = ?" , array($account_number));
             if($check_acc == NULL ) break;
             else if ($check_acc[0] -> Account_Number == $account_number)
             $account_number++;
