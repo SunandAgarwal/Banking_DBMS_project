@@ -11,14 +11,10 @@
 |
 */
 
-Route::get('/', 'CustomerController@index');
+Route::get('/', 'CustomerController@index')->name('home');
 
-Route::get('login', function()
-	{
-		return view('login');
-	});
+Route::get('/login', 'SessionsController@create');
 
-Route::get('register', function()
-	{
-		return view('register');
-	});
+Route::get('/register', 'RegistrationController@create');
+
+Route::post('/register', 'RegistrationController@store');

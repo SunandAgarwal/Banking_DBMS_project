@@ -16,7 +16,7 @@ class CreateCustomersTable extends Migration
         DB::statement("
             CREATE TABLE customers
             (
-                Customer_ID int PRIMARY KEY,
+                Customer_ID int PRIMARY KEY AUTO_INCREMENT,
                 first_name varchar(15) NOT NULL,
                 middle_name varchar(15),
                 last_name varchar(15) NOT NULL,

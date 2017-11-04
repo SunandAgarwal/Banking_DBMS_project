@@ -7,6 +7,8 @@
 
 @section('content')
   <form>
+
+  {{ csrf_field() }}
       
         <h1>Login</h1>
         
