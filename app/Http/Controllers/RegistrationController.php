@@ -33,6 +33,10 @@ class RegistrationController extends Controller
     		$user -> insert_data_employee(request() -> all());
     	}
 
+    	//to insert into users table.
+    	//FOR AUTHENTICATION PURPOSE.
+    	User::insert_into_user(request()->all());
+
     	return redirect()->home();
     }
 }

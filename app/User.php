@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -26,4 +27,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //to insert into users table.
+    public static function insert_into_user($user) {
+        DB::insert("
+            INSERT INTO users (name, email, password, created_at, updated_at) VALUES(?, ?, ?, NOW(), NOW()) 
+        ", array($user['name'], $user['email'], bcrypt($user['password'])));
+    }
 }
