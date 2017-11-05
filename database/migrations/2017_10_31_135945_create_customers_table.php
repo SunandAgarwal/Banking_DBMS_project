@@ -27,7 +27,7 @@ class CreateCustomersTable extends Migration
                 PIN_Code int NOT NULL,
                 Gender enum('M', 'F', 'O') NOT NULL,
                 Date_of_birth date NOT NULL,
-                Email varchar(25),
+                Email varchar(25) NOT NULL UNIQUE,
                 Aadhar_number int NOT NULL UNIQUE,
                 Account_Number bigint NOT NULL
             )
