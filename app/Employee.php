@@ -12,13 +12,13 @@ use App\Emp_Acc;
 class Employee extends Model
 {
 	static function generate_salary($designation){
-		if($designation == 'ma')
+		if($designation == 'Manager')
 			return 50000;
-		else if($designation == 'po')
+		else if($designation == 'Probationary Officer')
 			return 40000;
-		else if($designation == 'so')
+		else if($designation == 'Specialist Officer')
 			return 35000;
-		else if($designation == 'oa')
+		else if($designation == 'Office Assistant')
 			return 25000;
 	}
 

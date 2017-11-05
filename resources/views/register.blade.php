@@ -53,10 +53,10 @@
           <br>
           Designation:
           <select id="designation" name="designation">
-            <option value="ma">Manager</option>
-            <option value="po">Probationary Officer</option>
-            <option value="so">Specialist Officer</option>
-            <option value="oa">Office Assistant</option>
+            <option value="Manager">Manager</option>
+            <option value="Probationary Officer">Probationary Officer</option>
+            <option value="Specialist Officer">Specialist Officer</option>
+            <option value="Office Assistant">Office Assistant</option>
           </select>
 
           <legend><span class="number">4</span>Your Account Info : </legend>
