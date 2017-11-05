@@ -25,7 +25,7 @@ class CreateEmployeesTable extends Migration
                 Pin_Code int NOT NULL,
                 Gender enum('M','F','O') NOT NULL,
                 Date_Of_birth date NOT NULL,
-                Email text,
+                Email varchar(25) NOT NULL UNIQUE,
                 Aadhar_number int NOT NULL UNIQUE,
                 Designation text NOT NULL,
                 Salary int NOT NULL,
