@@ -30,7 +30,12 @@ class User extends Authenticatable
 
     //to insert into users table.
     public static function insert_into_user($user) {
-        $user = User::create(request['name', 'email' , 'password']);
+        $user = User::create([
+            'name' => $user['name'],
+            'email' => $user['email'],
+            'password' => bcrypt($user['password'])
+        ]);
+        
         auth()->login($user);
     }
 }
