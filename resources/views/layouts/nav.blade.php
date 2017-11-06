@@ -6,8 +6,10 @@
 	  <div class="container">
 	    <nav class="nav">
 	      <a class="nav-link active" href="#">Home</a>
-	      <a class="nav-link" href="#">@yield('name')</a>
-	      <a class="nav-link ml-auto" href="#">Logout</a>
+	      @if(Auth::check())
+	      	<a class="nav-link" href="#">{{ Auth::user()->name }}</a>
+	      	<button id ="logout" class="btn btn-link ml-auto" type="submit">Logout</button>
+	      @endif	    
 	    </nav>
 	  </div>
 	</div>

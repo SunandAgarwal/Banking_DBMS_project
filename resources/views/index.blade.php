@@ -1,9 +1,5 @@
 @extends ('layouts.layout')
 
-@section('name')
-	get_the_name_from_the_database
-@endsection
-
 @section('content')
 	<div>
 		<div class="btn btn-block btn-lg btn-primary">Account Services</div>
