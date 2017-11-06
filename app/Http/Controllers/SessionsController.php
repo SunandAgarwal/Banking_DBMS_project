@@ -9,6 +9,10 @@ class SessionsController extends Controller
 	public function __construct() {
 		$this->middleware('guest', ['except' => 'destroy']);
 	}
+	//for homepage
+	public function homepage() {
+		return view('homepage');
+	}
     // for login, creating a session
     public function create() {
     	return view('login');
@@ -24,7 +28,7 @@ class SessionsController extends Controller
 
     public function destroy() {
     	auth()->logout();
-    	return redirect('/login');
+    	return redirect('/');
     }
 
 }

@@ -10,8 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'SessionsController@homepage');
 
-Route::get('/', 'CustomerController@index') -> name('home');
+Route::get('/home', 'CustomerController@index') -> name('home');
 
 Route::get('/register', 'RegistrationController@create');
 
@@ -22,5 +23,3 @@ Route::get('/login', 'SessionsController@create')->name('login');
 Route::post('/login', 'SessionsController@store');
 
 Route::get('/logout', 'SessionsController@destroy');
-
-Route::get('home', 'CustomerController@index');
