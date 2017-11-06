@@ -8,7 +8,7 @@
 	      <a class="nav-link active" href="#">Home</a>
 	      @if(Auth::check())
 	      	<a class="nav-link" href="#">{{ Auth::user()->name }}</a>
-	      	<button id ="logout" class="btn btn-link ml-auto" type="submit">Logout</button>
+	      	<button id ="logout" class="btn btn-link ml-auto" href="/logout" method="post" type="submit">Logout</button>
 	      @endif	    
 	    </nav>
 	  </div>
