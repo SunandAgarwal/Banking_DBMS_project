@@ -27,3 +27,7 @@ Route::get('/logout', 'SessionsController@destroy');
 Route::get('/accountServices', 'AccountController@services');
 
 Route::get('/accountSummary', 'AccountController@summary');
+
+route::get('/deposit', function() {
+	return view('transactions.deposit');
+});

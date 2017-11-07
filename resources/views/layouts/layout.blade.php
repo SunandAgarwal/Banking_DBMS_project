@@ -12,6 +12,42 @@
     	button {
     		cursor: pointer;
     	}
+    	input[type=text], input[type=number] {
+	    width: 100%;
+	    padding: 12px 20px;
+	    margin: 8px 0;
+	    display: inline-block;
+	    border: 3px solid #ccc;
+	    border-radius: 4px;
+	    box-sizing: border-box;
+	    -webkit-transition: 0.3s;
+	    transition: 0.3s;
+	    outline: none;
+		}
+		input[type=text]:focus, input[type=number]:focus {
+		    border: 3px solid #555;
+		}
+
+		input[type=submit] {
+		    width: 100%;
+		    background-color: #4CAF50;
+		    color: white;
+		    padding: 14px 20px;
+		    margin: 8px 0;
+		    border: none;
+		    border-radius: 4px;
+		    cursor: pointer;
+		}
+
+		input[type=submit]:hover {
+		    background-color: #45a049;
+		}
+
+		.deposit {
+		    border-radius: 5px;
+		    background-color: #f2f2f2;
+		    padding: 20px;
+		}
     </style>
   
 

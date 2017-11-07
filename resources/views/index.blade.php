@@ -3,7 +3,7 @@
 @section('content')
 	<div>
 		<button class="btn btn-block btn-lg btn-primary" onclick="window.location.href='accountServices'">Account Services</button>
-		<button class="btn btn-block btn-lg btn-primary">Deposit Money</button>
+		<button class="btn btn-block btn-lg btn-primary" onclick="window.location.href='deposit'">Deposit Money</button>
 		<button class="btn btn-block btn-lg btn-primary">Send Money</button>
 		<button class="btn btn-block btn-lg btn-primary">Request Money</button>
 		<button class="btn btn-block btn-lg btn-primary">Loan Services</button>

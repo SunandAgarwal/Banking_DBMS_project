@@ -9,6 +9,7 @@
   <form method="POST" action="/register">
       {{ csrf_field() }}
       @include ('errors.errors')
+      
         <h1>Register</h1>
         
           <legend><span class="number">1</span>Your Basic Info:</legend>
