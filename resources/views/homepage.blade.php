@@ -22,6 +22,7 @@
     	}
     	button:hover {
     		opacity:1;
+    		cursor: pointer;
     	}
     	html {
 		    background: url(/bank.jpg) no-repeat center fixed; 

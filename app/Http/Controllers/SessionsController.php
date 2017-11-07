@@ -20,9 +20,16 @@ class SessionsController extends Controller
 
     // for login, logging in the user
     public function store() {
-    	// dd(request(['email', 'password']));
+    	//form validation
+    	$this->validate(request(), [
+    		'email' => 'required',
+    		'password' => 'required'
+    	]);
+
     	if(!auth()->attempt(request(['email', 'password'])))
-    		return back();
+    		return back()->withErrors([
+    			'message' => 'Invalid Credentials!'
+    		]);
     	return redirect()->home();
     }
 
