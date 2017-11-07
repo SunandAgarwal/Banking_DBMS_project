@@ -42,4 +42,50 @@ class Account extends Model
     	");
     }
 
+    //for getting the account details
+    public static function getAccountDetails($id) {
+    	// get user details
+    	$user_detail = DB::select("
+			SELECT email, user FROM users WHERE id = ?
+    	", array($id));
+    	$user_detail = $user_detail[0];
+
+    	if($user_detail->user == 'employee') {
+    		// get the id of the user
+    		$user_id = DB::select("
+				SELECT Employee_ID FROM employees WHERE Email = ?
+    		", array($user_detail->email));
+    		$user_id = $user_id[0];
+
+    		// get the account number
+    		$user_account_number = DB::select("
+				SELECT Account_Number FROM emp__acc WHERE Employee_ID = ?
+    		", array($user_id->Employee_ID));
+    		$user_account_number = $user_account_number[0];
+
+    		// get the account details
+    		$details = DB::select("
+				SELECT * FROM accounts WHERE Account_Number = ?
+    		", array($user_account_number->Account_Number));
+    		$details = $details[0];
+
+    		return $details;
+    	}
+    	else {
+    		// get the id of the user
+    		$user_account_number = DB::select("
+				SELECT Account_Number FROM customers WHERE Email = ?
+    		", array($user_detail->email));
+    		$user_account_number = $user_account_number[0];
+
+    		// get the account details
+    		$details = DB::select("
+				SELECT * FROM accounts WHERE Account_Number = ?
+    		", array($user_account_number->Account_Number));
+    		$details = $details[0];
+
+    		return $details;
+    	}
+    }
+
 }

@@ -29,7 +29,8 @@ class CreateCustomersTable extends Migration
                 Date_of_birth date NOT NULL,
                 Email varchar(25) NOT NULL UNIQUE,
                 Aadhar_number bigint NOT NULL UNIQUE,
-                Account_Number bigint NOT NULL
+                Account_Number bigint NOT NULL,
+                FOREIGN KEY(Account_Number) REFERENCES accounts(Account_Number)
             )
         ");
     }

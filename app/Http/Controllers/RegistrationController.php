@@ -21,6 +21,7 @@ class RegistrationController extends Controller
 
     // store the information of the user
     public function store() {
+        // form validation
     	$user = request('user');
     	if($user == 'customer') {
     		$user = new Customer;

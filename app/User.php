@@ -33,7 +33,8 @@ class User extends Authenticatable
         $user = User::create([
             'name' => $user['name'],
             'email' => $user['email'],
-            'password' => bcrypt($user['password'])
+            'password' => bcrypt($user['password']),
+            'user' => $user['user']
         ]);
         
         auth()->login($user);
