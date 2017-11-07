@@ -2,13 +2,13 @@
 
 @section('content')
 	<div>
-		<div class="btn btn-block btn-lg btn-primary">Account Services</div>
-		<div class="btn btn-block btn-lg btn-primary">Deposit Money</div>
-		<div class="btn btn-block btn-lg btn-primary">Send Money</div>
-		<div class="btn btn-block btn-lg btn-primary">Request Money</div>
-		<div class="btn btn-block btn-lg btn-primary">Loan Services</div>
-		<div class="btn btn-block btn-lg btn-primary">Password Management</div>
-		<div class="btn btn-block btn-lg btn-primary">Transaction History</div>
-		<div class="btn btn-block btn-lg btn-primary">Card Services</div>
+		<button class="btn btn-block btn-lg btn-primary" onclick="window.location.href='accountServices'">Account Services</button>
+		<button class="btn btn-block btn-lg btn-primary">Deposit Money</button>
+		<button class="btn btn-block btn-lg btn-primary">Send Money</button>
+		<button class="btn btn-block btn-lg btn-primary">Request Money</button>
+		<button class="btn btn-block btn-lg btn-primary">Loan Services</button>
+		<button class="btn btn-block btn-lg btn-primary">Password Management</button>
+		<button class="btn btn-block btn-lg btn-primary">Transaction History</button>
+		<button class="btn btn-block btn-lg btn-primary">Card Services</button>
 	</div>
 @endsection

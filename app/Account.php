@@ -46,11 +46,11 @@ class Account extends Model
     public static function getAccountDetails($id) {
     	// get user details
     	$user_detail = DB::select("
-			SELECT email, user FROM users WHERE id = ?
+			SELECT email, user_type FROM users WHERE id = ?
     	", array($id));
     	$user_detail = $user_detail[0];
 
-    	if($user_detail->user == 'employee') {
+    	if($user_detail->user_type == 'employee') {
     		// get the id of the user
     		$user_id = DB::select("
 				SELECT Employee_ID FROM employees WHERE Email = ?

@@ -5,7 +5,7 @@
 	<div class="blog-masthead">
 	  <div class="container">
 	    <nav class="nav">
-	      <a class="nav-link active" href="/homepage">Home</a>
+	      <a class="nav-link active" href="/">Home</a>
 	      @if(Auth::check())
 		      	<a class="nav-link" href="#">{{ Auth::user()->name }} </a>
 		      	<a class="nav-link ml-auto" href="/logout">Logout</a>

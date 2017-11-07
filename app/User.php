@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','user_type',
     ];
 
     /**
@@ -31,10 +31,10 @@ class User extends Authenticatable
     //to insert into users table.
     public static function insert_into_user($user) {
         $user = User::create([
+            'user_type' => $user['user'],
             'name' => $user['name'],
             'email' => $user['email'],
-            'password' => bcrypt($user['password']),
-            'user' => $user['user']
+            'password' => bcrypt($user['password'])
         ]);
         
         auth()->login($user);
