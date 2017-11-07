@@ -15,5 +15,7 @@
             <input type="password" id="password" name="password" placeholder="Password">
           
         <button type = "submit" class="btn btn-success btn-block">Let Me In</button>
+        <br><br>
+        @include('errors.errors')
   </form>
 @endsection
