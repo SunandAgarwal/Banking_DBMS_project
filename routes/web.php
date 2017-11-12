@@ -28,6 +28,10 @@ Route::get('/accountServices', 'AccountController@services');
 
 Route::get('/accountSummary', 'AccountController@summary');
 
-route::get('/deposit', 'TransactionController@deposit_show');
+Route::get('/deposit', 'TransactionController@deposit_show');
 
-route::post('/home', 'TransactionController@deposit');
+Route::post('/home', 'TransactionController@deposit');
+
+Route::get('/send', 'TransactionController@send_show');
+
+Route::post('/send', 'TransactionController@send');

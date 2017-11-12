@@ -11,6 +11,7 @@
     <style>
     	button {
     		cursor: pointer;
+    		width: 120px;
     	}
     	input[type=text], input[type=number] {
 	    width: 100%;
@@ -43,7 +44,7 @@
 		    background-color: #45a049;
 		}
 
-		.deposit {
+		.deposit, .send {
 		    border-radius: 5px;
 		    background-color: #f2f2f2;
 		    padding: 20px;

@@ -101,4 +101,42 @@ class Account extends Model
             UPDATE accounts SET Balance = ? WHERE Account_Number = ?
         ", array($balance, $deposit_details['account_number']));
     }
+
+    //to send money.
+    public static function send_money($send_details) {
+        $amount = $send_details['amt'];
+        $acc_no = DB::select("
+            SELECT Account_Number FROM accounts WHERE Account_Number <> ?
+        ", array($send_details['account_number']));
+        $beneficiary_account_number = $send_details['beneficiary_account_number'];
+        $check = 0; 
+        foreach($acc_no as $acc_no)
+        {
+            $acc_no = $acc_no->Account_Number;
+            if($acc_no == $beneficiary_account_number)
+            {
+                $check++;
+                $beneficiary_balance = DB::select("
+                    SELECT Balance FROM accounts WHERE Account_Number = ?
+                    ", array($beneficiary_account_number));
+                $beneficiary_balance = $beneficiary_balance[0]->Balance;
+                $balance = DB::select("
+                    SELECT Balance FROM accounts WHERE Account_Number = ?
+                    ", array($send_details['account_number']));
+                $balance = $balance[0]->Balance;
+                $balance = $balance - $amount;
+                $beneficiary_balance = $beneficiary_balance + $amount;
+
+                DB::update("
+                    UPDATE accounts SET Balance = ? WHERE Account_Number = ?
+                 ", array($balance, $send_details['account_number']));
+                DB::update("
+                    UPDATE accounts SET Balance = ? WHERE Account_Number = ?
+                 ", array($beneficiary_balance, $send_details['beneficiary_account_number']));
+
+                break;
+            }
+        }
+        return $check;
+    }
 }
