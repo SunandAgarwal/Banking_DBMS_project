@@ -16,15 +16,15 @@ class CreateTransactionsTable extends Migration
         DB::statement("
             CREATE TABLE transactions
             (
-                Transaction_ID int Primary key,
+                Transaction_ID bigint Primary key,
                 Date date,
                 Time time,
                 Debit real,
                 Credit real,
                 Type text NOT NULL,
                 Account_Number bigint NOT NULL,
-                Sender_Acc_No int,
-                Beneficiary_Acc_No int,
+                Sender_Acc_No bigint,
+                Beneficiary_Acc_No bigint,
                 Foreign Key(Account_Number) References accounts (Account_Number)
             )
         ");        

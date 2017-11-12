@@ -21,7 +21,7 @@ class TransactionController extends Controller
 
     //to deposit money.
     public function deposit() {
-    	Account::deposit_money(request()->all());
+    	Transaction::deposit_money(request()->all());
 
     	return redirect('/accountSummary');
     }
@@ -47,4 +47,21 @@ class TransactionController extends Controller
         return view('accountServices.miniStatement', compact('transaction', 'heading'));
     }
 
+    //to show the send page.
+    public function send_show() {
+    	$details = Account::getAccountDetails(auth()->id());
+    	$account_number = $details->Account_Number;
+    	return view('transactions.send', compact('account_number'));
+    }
+
+    //to send money.
+    public function send() {
+    	$check = Transaction::send_money(request()->all());
+    	if($check > 0)
+    		return redirect('/home');
+    	else
+    		return back()->withErrors([
+                'message' => 'Invalid Details!'
+            ]);
+    }
 }

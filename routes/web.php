@@ -41,3 +41,7 @@ Route::get('/specifiedPeriod', 'TransactionController@specified_form');
 Route::post('/specifiedPeriod', 'TransactionController@specified_show');
 
 Route::get('/transactionHistory', 'TransactionController@showTransactionHistory');
+
+Route::get('/send', 'TransactionController@send_show');
+
+Route::post('/send', 'TransactionController@send');
