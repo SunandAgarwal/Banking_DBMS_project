@@ -88,4 +88,17 @@ class Account extends Model
     	}
     }
 
+    //to deposit money.
+    public static function deposit_money($deposit_details) {
+        $amount = $deposit_details['amt'];
+        $balance = DB::select("
+            SELECT Balance FROM accounts WHERE Account_Number = ?
+        ", array($deposit_details['account_number']));
+        $balance = $balance[0]->Balance;
+        $balance = $balance + $amount;
+
+        DB::update("
+            UPDATE accounts SET Balance = ? WHERE Account_Number = ?
+        ", array($balance, $deposit_details['account_number']));
+    }
 }

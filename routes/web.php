@@ -28,6 +28,6 @@ Route::get('/accountServices', 'AccountController@services');
 
 Route::get('/accountSummary', 'AccountController@summary');
 
-route::get('/deposit', function() {
-	return view('transactions.deposit');
-});
+route::get('/deposit', 'TransactionController@deposit_show');
+
+route::post('/home', 'TransactionController@deposit');
