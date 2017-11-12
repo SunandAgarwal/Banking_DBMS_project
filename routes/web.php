@@ -28,6 +28,16 @@ Route::get('/accountServices', 'AccountController@services');
 
 Route::get('/accountSummary', 'AccountController@summary');
 
-route::get('/deposit', 'TransactionController@deposit_show');
+Route::get('/deposit', 'TransactionController@deposit_show');
 
-route::post('/home', 'TransactionController@deposit');
+Route::post('/home', 'TransactionController@deposit');
+
+Route::get('/accountStatement', 'AccountController@statement');
+
+Route::get('/miniStatement', 'AccountController@miniStatement');
+
+Route::get('/specifiedPeriod', 'TransactionController@specified_form');
+
+Route::post('/specifiedPeriod', 'TransactionController@specified_show');
+
+Route::get('/transactionHistory', 'TransactionController@showTransactionHistory');
