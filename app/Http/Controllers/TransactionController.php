@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Account;
+use App\Transaction;
 
 class TransactionController extends Controller
 {
@@ -20,7 +21,7 @@ class TransactionController extends Controller
 
     //to deposit money.
     public function deposit() {
-    	Account::deposit_money(request()->all());
+    	Transaction::deposit_money(request()->all());
 
     	return redirect('/accountSummary');
     }
@@ -34,12 +35,12 @@ class TransactionController extends Controller
 
     //to send money.
     public function send() {
-    	$check = Account::send_money(request()->all());
+    	$check = Transaction::send_money(request()->all());
     	if($check > 0)
     		return redirect('/home');
     	else
     		return back()->withErrors([
-                'message' => 'Invalid Beneficiary Details!'
+                'message' => 'Invalid Details!'
             ]);
     }
 }
