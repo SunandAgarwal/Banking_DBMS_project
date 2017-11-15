@@ -16,13 +16,14 @@ class CardInfoTable extends Migration
         // create table
         DB::statement("
             CREATE TABLE card__info (
-                Card_No int NOT NULL PRIMARY KEY,
-                CVV int(3) NOT NULL,
-                Valid_Thru int NOT NULL,
+                Card_No bigint NOT NULL PRIMARY KEY,
+                CVV varchar(255) NOT NULL,
+                Valid_Thru varchar(8) NOT NULL,
                 Card_Holder text,
                 Type text NOT NULL,
-                PIN int NOT NULL,
+                PIN varchar(255) NOT NULL,
                 Account_Number bigint NOT NULL,
+                Status text NOT NULL,
                 Foreign Key(Account_Number) References accounts (Account_Number)
             )
         ");

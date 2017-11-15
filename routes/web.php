@@ -45,3 +45,15 @@ Route::get('/transactionHistory', 'TransactionController@showTransactionHistory'
 Route::get('/send', 'TransactionController@send_show');
 
 Route::post('/send', 'TransactionController@send');
+
+Route::get('/cardServices', 'CardInfoController@cardServices');
+
+Route::get('/issueCard', 'CardInfoController@issueCard');
+
+Route::post('/issue_card', 'CardInfoController@store_card_info');
+
+Route::get('/card_info', 'CardInfoController@card_info');
+
+Route::get('/blockCard', 'CardInfoController@block_card');
+
+Route::post('/block_card', 'CardInfoController@blockCard');
