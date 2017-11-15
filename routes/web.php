@@ -57,3 +57,25 @@ Route::get('/card_info', 'CardInfoController@card_info');
 Route::get('/blockCard', 'CardInfoController@block_card');
 
 Route::post('/block_card', 'CardInfoController@blockCard');
+
+Route::get('/loanServices', function() {
+	return view('LoanServices.loanShow');
+});
+
+Route::get('/issueLoan', 'TakesLoanController@takeForm');
+
+Route::get('/repay', 'LoanController@repay');
+
+Route::post('/repay', 'LoanController@updateMoney');
+
+Route::post('/issueLoan', 'TakesLoanController@issueLoan');
+
+/*
+	DELIMITER //
+	CREATE TRIGGER updateAmtLoan
+	AFTER INSERT ON takes__loan
+	FOR EACH ROW
+	BEGIN
+		UPDATE accounts SET balance = balance + new.Loan_Amount;
+	END //
+*/
