@@ -19,7 +19,7 @@ class CreateLoansTable extends Migration
                 Loan_No int Primary key,
                 Type text NOT NULL,
                 Interest_Rate real NOT NULL,
-                Period text NOT NULL
+                Period(Year) text NOT NULL
             )
             ");
     }
