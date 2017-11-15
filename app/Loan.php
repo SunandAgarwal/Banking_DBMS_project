@@ -50,10 +50,10 @@ class Loan extends Model
         return $loanNo;
     }
 
-    public static function checkExistingLoan($account_number, $loanNo) {
+    public static function checkExistingLoan($account_number, $type) {
         $check = DB::select("
-            SELECT Loan_No FROM takes__loan
-            WHERE Account_Number = $account_number AND Loan_No = $loanNo
+            SELECT Type FROM takes__loan NATURAL JOIN loans
+            WHERE Account_Number = $account_number AND Type = '$type'
         ");
         if($check == NULL) 
             return 0;
@@ -72,9 +72,12 @@ class Loan extends Model
             AFTER UPDATE ON takes__loan
             FOR EACH ROW
             BEGIN
-                UPDATE accounts SET balance = balance - (old.Pending_Amount - new.Pending_Amount);
+                UPDATE accounts SET balance = balance - (old.Pending_Amount - new.Pending_Amount) 
+                WHERE Account_Number = old.Account_Number
+                AND (balance - (old.Pending_Amount - new.Pending_Amount)) >= 0;      
             END
         ");
     }
     
 }
+

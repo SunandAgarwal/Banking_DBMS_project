@@ -27,9 +27,10 @@ class TakesLoanController extends Controller
             array_push($period_array, $loan->Period);
         }
         $type_array = array_unique($type_array);
-        $period_array = array_unique($type_array);
+        $period_array = array_unique($period_array);
     	return view('LoanServices.takeLoan', [
-    		'loans' => $loan
+    		'type' => $type_array,
+            'period' => $period_array
     	]);
     }
 
@@ -40,7 +41,7 @@ class TakesLoanController extends Controller
         $details = Account::getAccountDetails(auth()->id());
         $account_number = $details->Account_Number;
         $loanNo = Loan::getLoanNumber(request('type'), request('period'));
-        $check_loan = Loan::checkExistingLoan($account_number, $loanNo);
+        $check_loan = Loan::checkExistingLoan($account_number, request('type'));
         if($check_loan == 0) {
             $loan = new Takes_Loan;
             $interestRate = Loan::getInterest(request('type'), request('period'));

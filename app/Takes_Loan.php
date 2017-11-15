@@ -27,15 +27,25 @@ class Takes_Loan extends Model
 			SELECT pending_amount FROM takes__loan	
 			WHERE Account_Number = $account_number AND Loan_No = $loanNo
     	");
-    	$pending_amount = $pending_amount[0]->pending_amount;
-    	$pending_amount = $pending_amount - $request['amt'];
+      if($pending_amount == NULL)
+        return 0;
+      else
+      {
+        $pending_amount1 = $pending_amount[0]->pending_amount;
+        $pending_amount = $pending_amount1 - $request['amt'];
+        $balance = DB::select("SELECT Balance FROM accounts WHERE Account_Number = $account_number");
+        $balance = $balance[0]->Balance;
+        if($pending_amount < 0 || $balance < $request['amt'])
+          return 2;
 
-    	$monthlyInstallment = $pending_amount / ($request['period'] * 12);
+        $monthlyInstallment = $pending_amount / ($request['period'] * 12);
 
-    	DB::statement("
-			UPDATE takes__loan SET Pending_Amount = $pending_amount,
-			Monthly_Installment = $monthlyInstallment
-			WHERE Account_Number = $account_number AND Loan_No = $loanNo
-    	");
+        DB::statement("
+        UPDATE takes__loan SET Pending_Amount = $pending_amount,
+        Monthly_Installment = $monthlyInstallment
+        WHERE Account_Number = $account_number AND Loan_No = $loanNo
+        ");
+        return 1;
+      }
     }
 }
