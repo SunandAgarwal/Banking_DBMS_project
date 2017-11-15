@@ -19,6 +19,15 @@ class TakesLoanController extends Controller
     	// get all loans available
     	$loan = new Loan;
     	$loan = $loan->getAllLoans();
+	// remove duplicates
+	$type_array = array();
+        $period_array = array();
+        foreach($loan as $loan) {
+            array_push($type_array, $loan->Type);
+            array_push($period_array, $loan->Period);
+        }
+        $type_array = array_unique($type_array);
+        $period_array = array_unique($type_array);
     	return view('LoanServices.takeLoan', [
     		'loans' => $loan
     	]);
