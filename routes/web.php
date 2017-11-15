@@ -45,3 +45,25 @@ Route::get('/transactionHistory', 'TransactionController@showTransactionHistory'
 Route::get('/send', 'TransactionController@send_show');
 
 Route::post('/send', 'TransactionController@send');
+
+Route::get('/loanServices', function() {
+	return view('LoanServices.loanShow');
+});
+
+Route::get('/issueLoan', 'TakesLoanController@takeForm');
+
+Route::get('/repay', 'LoanController@repay');
+
+Route::post('/repay', 'LoanController@updateMoney');
+
+Route::post('/issueLoan', 'TakesLoanController@issueLoan');
+
+/*
+	DELIMITER //
+	CREATE TRIGGER updateAmtLoan
+	AFTER INSERT ON takes__loan
+	FOR EACH ROW
+	BEGIN
+		UPDATE accounts SET balance = balance + new.Loan_Amount;
+	END //
+*/
