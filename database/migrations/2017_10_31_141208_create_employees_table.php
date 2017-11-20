@@ -28,7 +28,7 @@ class CreateEmployeesTable extends Migration
                 Email varchar(25) NOT NULL UNIQUE,
                 Aadhar_number bigint NOT NULL UNIQUE,
                 Designation text NOT NULL,
-                Salary int NOT NULL,
+                Salary bigint NOT NULL,
                 IFSC_Code varchar(15) NOT NULL,
                 Foreign Key (IFSC_Code) References branches(IFSC_Code)
             )

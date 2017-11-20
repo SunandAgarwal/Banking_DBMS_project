@@ -19,7 +19,7 @@ class CreateAccountsTable extends Migration
                 Type text NOT NULL,
                 Balance real NOT NULL,
                 Status text NOT NULL,
-                Cheque_Book_No int,
+                Cheque_Book_No bigint,
                 Registered_time datetime
             )
         ");        

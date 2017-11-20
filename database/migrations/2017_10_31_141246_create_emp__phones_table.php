@@ -16,7 +16,7 @@ class CreateEmpPhonesTable extends Migration
         DB::statement("
             CREATE TABLE emp__phones (
                 Employee_ID int,
-                Phone_No int,
+                Phone_No bigint,
                 PRIMARY KEY(Employee_ID, Phone_No),
                 Foreign Key(Employee_ID) References employees (Employee_ID)
             )

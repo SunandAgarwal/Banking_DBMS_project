@@ -17,10 +17,10 @@ class TakesLoanTable extends Migration
         DB::statement("
             CREATE TABLE takes__loan(
                 Account_Number bigint,
-                Loan_No int,
+                Loan_No bigint,
                 Loan_Amount real NOT NULL,
                 Monthly_Installment real NOT NULL,
-                Pending_Amount int NOT NULL,
+                Pending_Amount real NOT NULL,
                 Collateral_Guarantor text NOT NULL,
                 PRIMARY KEY(Account_Number, Loan_No),
                 Foreign Key(Account_Number) References accounts (Account_Number),

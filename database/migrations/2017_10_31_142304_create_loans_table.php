@@ -16,7 +16,7 @@ class CreateLoansTable extends Migration
         DB::statement("
             CREATE TABLE loans
             (
-                Loan_No int Primary key,
+                Loan_No bigint Primary key,
                 Type text NOT NULL,
                 Interest_Rate real NOT NULL,
                 Period text NOT NULL

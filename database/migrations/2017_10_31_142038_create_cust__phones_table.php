@@ -17,7 +17,7 @@ class CreateCustPhonesTable extends Migration
             CREATE TABLE cust__phones
             (
                 Customer_ID int,
-                Phone_No int,
+                Phone_No bigint,
                 Primary Key(Customer_ID, Phone_No),
                 Foreign Key (Customer_ID) References customers(Customer_ID)
             )
